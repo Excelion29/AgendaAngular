@@ -27,7 +27,7 @@ export class AgendaComponent implements OnInit {
       header:{
         left:'prev,next',
         center: 'title',
-        right: 'dayGridMonth,timeGridweek, timeGridDay'
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       editable: false
     }
