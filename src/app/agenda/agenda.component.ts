@@ -5,12 +5,20 @@ import TimeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import esLocale from '@fullcalendar/core/locales/es';
 
+import { CalendarOptions } from '@fullcalendar/core';
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './agenda.component.html',
   styleUrls: ['./agenda.component.css']
 })
+
 export class AgendaComponent implements OnInit {
+
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+    weekends: false 
+  };
 
   public events: any[];
   public options:any;
@@ -31,8 +39,9 @@ export class AgendaComponent implements OnInit {
       },
       editable: false
     }
-
+    
     this.events = [
+
       {
         title: "Evento 1",
         start: new Date(),
@@ -48,8 +57,9 @@ export class AgendaComponent implements OnInit {
         start: new Date(new Date().getTime() + (8640000 * 2)),
         end: new Date(new Date().getTime() + (8640000 * 3)),
         description: "Evento 3"
-      }
+      },
     ]
+
   }
 
 }
